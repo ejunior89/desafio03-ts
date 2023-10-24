@@ -1,6 +1,7 @@
 import {
   ChakraProvider
 } from '@chakra-ui/react'
+
 import { BrowserRouter } from 'react-router-dom';
 import {  AppContextProvider } from './components/AppContext';
 import { Layout } from './components/Layout';

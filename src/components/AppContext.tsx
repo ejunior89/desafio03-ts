@@ -19,9 +19,9 @@ export const AppContextProvider = ({ children }: any) => {
         const { login } = JSON.parse(storage)
         setIsLoggedIn(login)
       }
-    }, [])
+    }, [storage])
 
-    const user = 'nathally'
+    const user = 'Hélio'
   
     return (
       <AppContext.Provider value={{ user, isLoggedIn, setIsLoggedIn }}>

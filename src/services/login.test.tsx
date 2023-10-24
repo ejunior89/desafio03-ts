@@ -2,7 +2,7 @@ import { login } from "./login"
 
 describe('login', () => {
 
-    const mockEmail = 'nath@dio.bank'
+    const mockEmail = 'helio@dio.bank'
     it('Deve exibir um alert com boas vindas caso o email seja válido', async() => {
         const response = await login(mockEmail)
         expect(response).toBeTruthy()

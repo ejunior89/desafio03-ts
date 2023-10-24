@@ -1,5 +1,5 @@
 import { Box, Center, Input } from "@chakra-ui/react";
-import { MouseEventHandler, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../components/AppContext";
 import { Card } from "../components/Card";
@@ -8,22 +8,24 @@ import { login } from "../services/login";
 import { changeLocalStorage } from "../services/storage";
 
 const Home = () => {
-    const [ email, setEmail ] = useState<string>('')
+    const [email, setEmail] = useState<string>('')
     const { setIsLoggedIn } = useContext(AppContext)
     const navigate = useNavigate()
 
     const validateUser = async (email: string) => {
         const loggedIn = await login(email)
 
-        if(!loggedIn){
+        if (!loggedIn) {
             return alert('Email inválido')
         }
+
+        alert('Bem-Vindo ao Dio Bank')
 
         setIsLoggedIn(true)
         changeLocalStorage({ login: true })
         navigate('/conta/1')
     }
-  
+
     return (
         <Box padding="25px">
             <Card>
